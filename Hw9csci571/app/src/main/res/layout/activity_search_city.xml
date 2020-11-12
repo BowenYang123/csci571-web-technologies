@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:id="@+id/progressbar_view"
+        android:layout_width="fill_parent"
+        android:layout_height="620dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="250dp"
+            android:indeterminateDrawable="@drawable/progress"
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Fetching weather" />
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gridline"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:text="Search Result"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="330dp"
+        android:layout_height="170dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        app:cardBackgroundColor="@color/cardview_dark_background"
+        app:cardCornerRadius="10dp">
+
+        <ImageView
+            android:id="@+id/card1Img"
+
+            android:layout_width="115dp"
+            android:layout_height="115dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-10dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginRight="80dp"
+            android:src="@drawable/weather_sunny" />
+
+        <TextView
+            android:id="@+id/address"
+
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+
+            />
+
+        <TextView
+            android:id="@+id/summary"
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="73dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:scrollHorizontally="true"
+            android:textColor="@color/grey"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="92dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="30sp"
+            android:layout_marginLeft="30sp"
+            android:layout_marginTop="35dp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/info"
+
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="65dp"
+            android:src="@drawable/information_outline" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card2"
+        android:layout_width="330dp"
+        android:layout_height="137dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="215dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        app:cardBackgroundColor="@color/cardview_dark_background"
+        app:cardCornerRadius="10dp">
+
+
+        <ImageView
+            android:id="@+id/humidity"
+
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-22dp"
+            android:layout_marginEnd="156dp"
+            android:layout_marginRight="80dp"
+            android:src="@drawable/water_percent" />
+
+        <TextView
+            android:id="@+id/humidity_input"
+            android:layout_width="82dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="152dp"
+            android:layout_marginRight="152dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/humidity_str"
+            android:layout_width="82dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="103dp"
+            android:layout_marginEnd="152dp"
+            android:layout_marginRight="152dp"
+            android:gravity="center"
+            android:text="Humidity"
+            android:textAllCaps="false"
+            android:textColor="@color/grey"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/windspeed"
+
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-22dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginRight="80dp"
+            android:src="@drawable/weather_windy" />
+
+        <TextView
+            android:id="@+id/windspeed_input"
+            android:layout_width="105dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginRight="52dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/windspeed_str"
+            android:layout_width="105dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="103dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginRight="52dp"
+            android:gravity="center"
+            android:text="Wind Speed"
+            android:textAllCaps="false"
+            android:textColor="@color/grey"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/visibility"
+
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-22dp"
+            android:layout_marginEnd="-54dp"
+            android:layout_marginRight="80dp"
+            android:src="@drawable/eye_outline" />
+
+        <TextView
+            android:id="@+id/visibility_input"
+            android:layout_width="105dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="-56dp"
+            android:layout_marginRight="-56dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/visibility_str"
+            android:layout_width="82dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="103dp"
+            android:layout_marginEnd="-55dp"
+            android:layout_marginRight="-55dp"
+            android:gravity="center"
+            android:text="Visibility"
+            android:textAllCaps="false"
+            android:textColor="@color/grey"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/pressure"
+
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-22dp"
+            android:layout_marginEnd="-155sp"
+            android:layout_marginRight="80dp"
+            android:src="@drawable/gauge" />
+
+        <TextView
+            android:id="@+id/pressure_input"
+            android:layout_width="105dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="76dp"
+            android:layout_marginEnd="-153dp"
+            android:layout_marginRight="-153dp"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/pressure_str"
+            android:layout_width="82dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="103dp"
+            android:layout_marginEnd="-157dp"
+            android:layout_marginRight="-157dp"
+            android:gravity="center"
+            android:text="Pressure"
+            android:textAllCaps="false"
+            android:textColor="@color/grey"
+            android:textSize="18sp" />
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_marginTop="362dp"
+        android:fillViewport="true"
+        android:scrollbarStyle="outsideInset">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card3"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="false"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            app:cardBackgroundColor="@color/cardview_dark_background"
+            app:cardCornerRadius="10dp">
+
+            <TableLayout
+                android:id="@+id/weeklytable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:padding="5dp"
+                android:stretchColumns="0,1"
+                android:visibility="visible">
+
+                <TableRow android:minHeight="55dp">
+
+                    <TextView
+                        android:id="@+id/date0"
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="11/15/2019"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:id="@+id/img0"
+                        android:layout_width="80dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/eye_outline" />
+
+                    <TextView
+                        android:id="@+id/tempLow0"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="54"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tempHigh0"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="78"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+                </TableRow>
+
+                <TableRow android:background="@color/gridline">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_span="2" />
+                </TableRow>
+
+                <TableRow android:minHeight="55dp">
+
+                    <TextView
+                        android:id="@+id/date1"
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="11/15/2019"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:id="@+id/img1"
+                        android:layout_width="80dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/eye_outline" />
+
+                    <TextView
+                        android:id="@+id/tempLow1"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="54"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tempHigh1"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="78"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+                </TableRow>
+
+                <TableRow android:background="@color/gridline">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_span="2" />
+                </TableRow>
+
+                <TableRow android:minHeight="55dp">
+
+                    <TextView
+                        android:id="@+id/date2"
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="11/15/2019"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:id="@+id/img2"
+                        android:layout_width="80dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/eye_outline" />
+
+                    <TextView
+                        android:id="@+id/tempLow2"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="54"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tempHigh2"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="78"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+                </TableRow>
+
+                <TableRow android:background="@color/gridline">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_span="2" />
+                </TableRow>
+
+                <TableRow android:minHeight="55dp">
+
+                    <TextView
+                        android:id="@+id/date3"
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="11/15/2019"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:id="@+id/img3"
+                        android:layout_width="80dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/eye_outline" />
+
+                    <TextView
+                        android:id="@+id/tempLow3"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="54"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tempHigh3"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="78"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+                </TableRow>
+
+                <TableRow android:background="@color/gridline">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_span="2" />
+                </TableRow>
+
+                <TableRow android:minHeight="55dp">
+
+                    <TextView
+                        android:id="@+id/date4"
+                        android:layout_width="140dp"
+                        android:layout_height="55dp"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="11/15/2019"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:id="@+id/img4"
+                        android:layout_width="80dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/eye_outline" />
+
+                    <TextView
+                        android:id="@+id/tempLow4"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="54"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tempHigh4"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="78"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+                </TableRow>
+
+                <TableRow android:background="@color/gridline">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_span="2" />
+                </TableRow>
+
+                <TableRow android:minHeight="55dp">
+
+                    <TextView
+                        android:id="@+id/date5"
+                        android:layout_width="140dp"
+                        android:layout_height="60dp"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="11/15/2019"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:id="@+id/img5"
+                        android:layout_width="80dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/eye_outline" />
+
+                    <TextView
+                        android:id="@+id/tempLow5"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="54"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tempHigh5"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="78"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+                </TableRow>
+
+                <TableRow android:background="@color/gridline">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_span="2" />
+                </TableRow>
+
+                <TableRow android:minHeight="60dp">
+
+                    <TextView
+                        android:id="@+id/date6"
+                        android:layout_width="140dp"
+                        android:layout_height="60dp"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="11/15/2019"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:id="@+id/img6"
+                        android:layout_width="80dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/eye_outline" />
+
+                    <TextView
+                        android:id="@+id/tempLow6"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="54"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tempHigh6"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="78"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+                </TableRow>
+
+                <TableRow android:background="@color/gridline">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_span="2" />
+                </TableRow>
+
+                <TableRow android:minHeight="60dp">
+
+                    <TextView
+                        android:id="@+id/date7"
+                        android:layout_width="140dp"
+                        android:layout_height="60dp"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="11/15/2019"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp" />
+
+                    <ImageView
+                        android:id="@+id/img7"
+                        android:layout_width="80dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/eye_outline" />
+
+                    <TextView
+                        android:id="@+id/tempLow7"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="54"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/tempHigh7"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:padding="3dp"
+                        android:text="78"
+                        android:textColor="@android:color/white"
+                        android:textSize="26sp" />
+                </TableRow>
+
+            </TableLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+    </android.support.v4.widget.NestedScrollView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="66dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="add to favorite"
+        android:src="@drawable/map_marker_plus"
+        app:backgroundTint="@color/label1"
+        app:fabSize="normal"
+        app:layout_anchorGravity="bottom|right|end" />
+    </RelativeLayout>
+
+</RelativeLayout>

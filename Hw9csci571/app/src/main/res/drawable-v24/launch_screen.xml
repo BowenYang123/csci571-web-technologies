@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- The android:opacity=”opaque” line — this is critical in preventing a flash of black as your theme transitions. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:opacity="opaque">
+
+<!-- The background color, preferably the same as your normal theme -->
+<item
+
+    android:drawable="@android:color/black"/>
+
+<!-- Your product logo - 144dp color version of your app icon -->
+    <item>
+        <bitmap
+            android:src="@drawable/back"
+            android:gravity="bottom"/>
+    </item>
+
+<!--    <item android:width="120dp"-->
+<!--        android:height="50dp"-->
+<!--        android:gravity="center_horizontal|bottom">-->
+<!--        <bitmap android:src="@drawable/poweredby_darkbackground"-->
+<!--            />-->
+<!--    </item>-->
+<!--    <item-->
+<!--        android:width="10dp"-->
+<!--        android:height="30dp">-->
+<!--        <android.support.v7.widget.AppCompatImageView-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:src="@mipmap/poweredby_darkbackground"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            android:layout_marginTop="520dp"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+<!--    </item>-->
+
+
+</layer-list>
